@@ -1,5 +1,5 @@
 from django.urls import path
-from views import my_view
+from . import views
 
 urlpatterns = [
     path('forms/', views.my_view, name='my_view'),
