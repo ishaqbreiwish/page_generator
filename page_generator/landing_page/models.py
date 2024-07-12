@@ -6,6 +6,6 @@ class MyModel(models.Model):
                             verbose_name="Submissions")
     email = models.EmailField()
     message = models.TextField()
-
+    
     def __str__(self):
         return self.name
