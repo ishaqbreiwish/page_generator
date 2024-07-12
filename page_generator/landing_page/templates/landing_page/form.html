@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Poll Form</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">
+            Poll Form
+        </div>
+        <form method="post" action="{% url 'my_view' %}">
+            {% csrf_token %}
+            <div class="field">
+                {{ form.name }}
+                <label for="{{ form.name.id_for_label }}">Name</label>
+            </div>
+            <div class="field">
+                {{ form.email }}
+                <label for="{{ form.email.id_for_label }}">Email</label>
+            </div>
+            <div class="field">
+                {{ form.message }}
+                <label for="{{ form.message.id_for_label }}">Message</label>
+            </div>
+            <div class="field">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Form</title>
+</head>
+<body>
+    <h1>Submit Your Form</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html> -->
