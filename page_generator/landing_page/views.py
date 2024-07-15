@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import MyModelForm
+from rest_framework import APIView
 
 # Create your views here.
 def my_view(request):
