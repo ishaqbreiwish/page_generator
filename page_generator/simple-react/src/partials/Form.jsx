@@ -1,6 +1,5 @@
-// src/partials/Form.jsx
 import React, { useState } from 'react';
-import '../css/FormSection.scss'; // Ensure correct relative path to the SCSS file
+import axios from 'axios';
 
 function Form() {
   const [formData, setFormData] = useState({
@@ -10,17 +9,22 @@ function Form() {
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value,
+      [e.target.name]: e.target.value
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form data submitted:', formData);
+    axios.post('http://127.0.0.1:8000/api/react-form/', formData)
+      .then(response => {
+        console.log('Data submitted successfully:', response.data);
+      })
+      .catch(error => {
+        console.error('There was an error submitting the form!', error);
+      });
+    console.log(formData)
   };
 
   return (

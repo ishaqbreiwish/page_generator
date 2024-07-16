@@ -16,10 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+#from django.conf.urls import urls
+from landing_page.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     #path('', include('landing_page.urls')),
     path('landing_page/', include('landing_page.urls')),
+    path('', ReactView.as_view(), name="React_Form"),
+    path('', include('landing_page.urls')),
 ]
 

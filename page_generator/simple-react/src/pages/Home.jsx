@@ -24,8 +24,8 @@ function Home() {
         <HeroHome />
         <FeaturesHome />
         <FeaturesBlocks />
-        <FeaturesWorld />
         <Form />
+        <FeaturesWorld />
         <News />
         <Cta />
 

@@ -53,6 +53,11 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
+REST_FRAMEWORK = {'DEFAULT_PERMISSION_CLASSES':[
+    'rest_framework.permissions.AllowAny']}
+
+CORS_ORIGIN_ALLOW_ALL = True
+
 ROOT_URLCONF = 'page_generator.urls'
 
 CORS_ALLOWED_ORIGINS = ["http://localhost:3001"]
