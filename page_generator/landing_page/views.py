@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from .forms import MyModelForm
 from .serializers import ReactSerializer
 from .models import React
 from rest_framework.views import APIView
@@ -25,17 +24,3 @@ class ReactView(APIView):
             serializer.save()
             return Response(serializer.data, status=201)
         return Response(serializer.errors, status=400)
-
-
-def my_view(request):
-    if request.method == 'POST':
-        form = MyModelForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('success')
-    else:
-        form = MyModelForm
-    return render(request, 'landing_page/form.html', {'form': form}) 
-
-def success_view(request):
-    return render(request, 'landing_page/success.html') 
