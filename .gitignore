@@ -1,1 +1,4 @@
 page_generator/venv
+page_generator/db.sqlite3
+simple-html
+*.pyc
