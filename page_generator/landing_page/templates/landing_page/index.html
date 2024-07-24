@@ -1,0 +1,13 @@
+{% extends 'landing_page/base.html' %}
+{% load static %}
+
+{% block title %} Home {% endblock title%}
+
+{% block content %}
+    {% include 'landing_page/simple-html/src/partials/hero-home.html' %}
+    {% include 'landing_page/simple-html/src/partials/features-home.html' %}
+    {% include 'landing_page/simple-html/src/partials/features-blocks.html' %}
+    {% include 'landing_page/simple-html/src/partials/features-world.html' %}
+    {% include 'landing_page/simple-html/src/partials/news.html' %}
+    {% include 'landing_page/simple-html/src/partials/cta.html' %}
+{% endblock content %}

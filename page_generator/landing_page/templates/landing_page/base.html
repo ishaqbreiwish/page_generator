@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Default Title{% endblock %}</title>
+    {%load sass_tags%}
+    <link rel="stylesheet" href="{% sass_src 'landing_page/css/style.scss' %}">
+</head>
+<body class="font-inter antialiased bg-white text-gray-900 tracking-tight">
+    <div class="flex flex-col min-h-screen overflow-hidden">
+        {% include 'landing_page/simple-html/src/partials/header.html' %}
+        <main class="grow">
+            {% block content %}{% endblock %}
+        </main>
+        {% include 'landing_page/simple-html/src/partials/footer.html' %}
+    </div>
+    {%load static%}
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

@@ -14,3 +14,7 @@ def my_view(request):
 
 def success_view(request):
     return render(request, 'landing_page/success.html')
+
+
+def index(request):
+    return render(request, 'landing_page/index.html')
